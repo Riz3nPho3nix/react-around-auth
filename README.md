@@ -1,6 +1,37 @@
-This repository will contain your own front-end project on React with added authorization and registration features.
-Use your previously built front end from Sprint 11, or front end together with the back end you've built in sprints 12 and 13. 
+# Project 10: React Around the U.S.!
 
-All authorization, registration and token requests must go through to the server running on https://register.nomoreparties.co. Other requests which are not specified in this project may be connected  to either this back end server, or the one you have been building.
+We are now learning how to use React! It is so exciting! I especially enjoy the ability to use hooks for functional programming.
 
-Good luck!
+In this sprint we learned: 
+
+* JSX syntax
+
+* Create React App
+
+* useState() and useEffect()
+
+* Hooks!! (My personal favorite)
+
+* React dev tools
+
+I am super excited to learn more of what React can do! 
+
+# Proejct 11: Advanced React
+
+In Project 11 we finished re-creating the site in React by setting up all of our form functionality.
+
+We learned about:
+
+* React Router
+
+* Lifting state and global state
+
+* context and Redux
+
+* Forms, refs, pure components
+
+* Whiteboard interview training
+
+It was a lot of fun getting the rest of the site functionality set up in React.
+
+Please check out my site [here](https://riz3npho3nix.github.io/around-react/).
