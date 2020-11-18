@@ -1,9 +1,12 @@
 @import url('./__logo/header__logo.css');
+@import url('./__nav/header__nav.css');
 
 .header {
   height: 74px;
   padding-top: 45px;
   border-bottom: 1px solid #545454;
+  display: flex;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 900px){

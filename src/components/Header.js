@@ -6,6 +6,7 @@ function Header() {
     <>
     <header className="header">
         <img src={logo} alt="Around the US logo" className="header__logo" />
+        <p className="header__nav">Log in</p>
     </header>
     </>
   )

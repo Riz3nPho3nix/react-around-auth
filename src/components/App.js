@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import Header from './Header.js'
 import Main from './Main.js';
 import Footer from './Footer.js';
@@ -8,8 +9,10 @@ import EditProfilePopup from './EditProfilePopup';
 import AddPlacePopup from './AddPlacePopup';
 import EditAvatarPopup from './EditAvatarPopup';
 import ImagePopup from './ImagePopup.js';
+import Login from './Login.js';
 
 function App() {
+  const [loggedIn, setLoggedIn] = React.useState(false);
   const [currentUser, setCurrentUserData] = React.useState({});
   const [isEditProfileModalOpen, toggleProfileModal] = React.useState(false);
   const [isAddPlaceModalOpen, togglePlaceModal] = React.useState(false);
@@ -55,8 +58,6 @@ function App() {
     .then(() => {closeAllPopups()})
     .catch(err => console.log(err));
   }
-
-
 
   function handleCardLike(card) {
     const isLiked = card.likes.some(i => i._id === currentUser._id);
@@ -105,9 +106,15 @@ React.useEffect(() => {
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
-    <div className="content">
-    <div className="page">
-      <Header />
+          <div className="content">
+          <div className="page">
+            <Header />
+        <Switch>
+          <Route path="/signin">
+            <Login />
+          </Route>
+          <Route exact path="/">
+          <Header />
       <Main 
       
       onEditProfile={handleEditProfileClick}
@@ -120,13 +127,16 @@ React.useEffect(() => {
       onCardLike = {handleCardLike}
       onCardDelete = {handleCardDelete}
       />
+          </Route>
+        </Switch>
+    </div>
+    </div>
       <Footer />
       <EditProfilePopup isOpen={isEditProfileModalOpen} onClose={closeAllPopups} onUpdateUser={handleUpdateUser} />
       <AddPlacePopup isOpen={isAddPlaceModalOpen} onClose={closeAllPopups} onAddCard={handleAddCard} />
       <EditAvatarPopup isOpen={isEditAvatarModalOpen} onClose={closeAllPopups} onUpdateAvatar={handleUpdateAvatar} />
       <ImagePopup onClose={closeAllPopups} card={selectedCard} />
-    </div>
-    </div>
+
     </CurrentUserContext.Provider>
   );
 }
