@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from '../images/logo-white.svg';
 
-function Header() {
+function Header(props) {
   return (
     <>
     <header className="header">
         <img src={logo} alt="Around the US logo" className="header__logo" />
-        <p className="header__nav">Log in</p>
+  <p className="header__nav">{props.link}</p>
     </header>
     </>
   )

@@ -108,13 +108,13 @@ React.useEffect(() => {
     <CurrentUserContext.Provider value={currentUser}>
           <div className="content">
           <div className="page">
-            <Header />
         <Switch>
           <Route path="/signin">
+            <Header link={'Signup'} />
             <Login />
           </Route>
           <Route exact path="/">
-          <Header />
+          <Header link={'Signout'}/>
       <Main 
       
       onEditProfile={handleEditProfileClick}
@@ -129,9 +129,9 @@ React.useEffect(() => {
       />
           </Route>
         </Switch>
-    </div>
-    </div>
       <Footer />
+    </div>
+    </div>
       <EditProfilePopup isOpen={isEditProfileModalOpen} onClose={closeAllPopups} onUpdateUser={handleUpdateUser} />
       <AddPlacePopup isOpen={isAddPlaceModalOpen} onClose={closeAllPopups} onAddCard={handleAddCard} />
       <EditAvatarPopup isOpen={isEditAvatarModalOpen} onClose={closeAllPopups} onUpdateAvatar={handleUpdateAvatar} />

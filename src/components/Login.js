@@ -21,8 +21,8 @@ function Login(props) {
 
 return (
 <AuthForm name='signin' title='Log in' onSubmit={handleSubmit} note='Not a member yet? Sign up here!'>
-  <input className='modal__input' name='username' type='email' value={username} onChange={handleNameChange} required/>
-  <input className='modal__input' name='password' type='password' value={password} onChange={handlePasswordChange} required/>
+  <input className='auth__input' name='username' type='email' value={username} onChange={handleNameChange} placeholder="Email" required/>
+  <input className='auth__input' name='password' type='password' value={password} onChange={handlePasswordChange} placeholder="Password" required/>
 </AuthForm>
 )
 }
